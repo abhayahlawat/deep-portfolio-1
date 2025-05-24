@@ -22,17 +22,19 @@ function App() {
   const toggleDarkMode = () => setDarkMode(!darkMode);
 
   return (
-    <div className="bg-white dark:bg-gray-900 text-gray-900 dark:text-white transition-colors duration-300">
-      <Header />
-      <main>
-        <Hero />
-        <About />
-        <Projects />
-        <Blog />
-        <Contact />
-      </main>
-      <Footer />
-      <div className="fixed bottom-6 right-6 z-50">
+    <div className="min-h-screen w-full max-w-full overflow-x-hidden bg-white dark:bg-gray-900 text-gray-900 dark:text-white transition-colors duration-300">
+      <div className="w-full max-w-full">
+        <Header />
+        <main className="w-full max-w-full overflow-x-hidden">
+          <Hero />
+          <About />
+          <Projects />
+          <Blog />
+          <Contact />
+        </main>
+        <Footer />
+      </div>
+      <div className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50">
         <ThemeToggle darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
       </div>
     </div>
