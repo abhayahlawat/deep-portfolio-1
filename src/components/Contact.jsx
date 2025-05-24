@@ -96,7 +96,7 @@ const Contact = () => {
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-            Get In <span className="text-primary-500">Touch</span>
+            Get In <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-500 to-secondary-500">Touch</span>
           </h2>
           <div className="w-24 h-1 bg-primary-500 mx-auto mb-8"></div>
           <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
