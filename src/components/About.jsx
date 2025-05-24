@@ -7,14 +7,11 @@ const About = () => {
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-          observer.disconnect(); // Stop observing once triggered
-        }
+        setIsVisible(entry.isIntersecting);
       },
       { 
-        threshold: 0.1,
-        rootMargin: '0px 0px -100px 0px' // Trigger earlier
+        threshold: 0.15,
+        rootMargin: '0px 0px -50px 0px'
       }
     );
 
@@ -54,8 +51,8 @@ const About = () => {
     <section id="about" className="py-20 bg-gray-50 dark:bg-gray-800/50">
       <div className="container mx-auto px-6">
         {/* Header */}
-        <div className={`text-center mb-16 transition-all duration-700 ease-out ${
-          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+        <div className={`text-center mb-16 transition-all duration-800 ease-out ${
+          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
         }`}>
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
             About <span className="text-primary-500">Me</span>
@@ -66,9 +63,10 @@ const About = () => {
         {/* Main Content Grid */}
         <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
           {/* Text Content */}
-          <div className={`transition-all duration-700 ease-out delay-200 ${
-            isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'
-          }`}>
+          <div className={`transition-all duration-800 ease-out ${
+            isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-4'
+          }`}
+          style={{ transitionDelay: '100ms' }}>
             <h3 className="text-2xl font-bold text-gray-800 dark:text-white mb-4">My Journey</h3>
             <p className="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">
               I'm a passionate front-end developer with over 3 years of experience in creating modern web applications. My journey began with a fascination for how things work on the web, which led me to dive deep into both frontend and backend technologies.
@@ -86,9 +84,10 @@ const About = () => {
           </div>
 
           {/* Image */}
-          <div className={`relative aspect-square max-w-md mx-auto transition-all duration-700 ease-out delay-300 ${
-            isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-8'
-          }`}>
+          <div className={`relative aspect-square max-w-md mx-auto transition-all duration-800 ease-out ${
+            isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-4'
+          }`}
+          style={{ transitionDelay: '200ms' }}>
             <div className="absolute inset-0 bg-gradient-to-tr from-primary-500 to-secondary-500 rounded-2xl transform rotate-6"></div>
             <img
               src="https://images.pexels.com/photos/5926382/pexels-photo-5926382.jpeg"
@@ -100,22 +99,23 @@ const About = () => {
         </div>
 
         {/* Skills Header */}
-        <h3 className={`text-2xl font-bold text-center text-gray-900 dark:text-white mb-12 transition-all duration-700 ease-out delay-400 ${
-          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-        }`}>
+        <h3 className={`text-2xl font-bold text-center text-gray-900 dark:text-white mb-12 transition-all duration-800 ease-out ${
+          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+        }`}
+        style={{ transitionDelay: '300ms' }}>
           My Expertise
         </h3>
 
         {/* Skills Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {skills.map((skill, index) => (
             <div
               key={index}
-              className={`bg-white dark:bg-gray-900 p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-700 ease-out border border-gray-100 dark:border-gray-800 ${
-                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+              className={`bg-white dark:bg-gray-900 p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-800 ease-out border border-gray-100 dark:border-gray-800 ${
+                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
               }`}
               style={{ 
-                transitionDelay: `${500 + (index * 100)}ms`
+                transitionDelay: `${400 + (index * 100)}ms`
               }}
             >
               <div className="bg-primary-50 dark:bg-primary-900/20 p-3 rounded-full w-12 h-12 flex items-center justify-center mb-4">
