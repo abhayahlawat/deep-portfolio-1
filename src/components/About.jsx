@@ -55,7 +55,7 @@ const About = () => {
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
         }`}>
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-            About <span className="text-primary-500">Me</span>
+            About <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-500 to-secondary-500">Me</span>
           </h2>
           <div className="w-24 h-1 bg-primary-500 mx-auto"></div>
         </div>
